@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=east": { "model": "torches:block/stone_wall_torch" },
+    "facing=north": { "model": "torches:block/stone_wall_torch", "y": 270 },
+    "facing=south": { "model": "torches:block/stone_wall_torch", "y": 90 },
+    "facing=west": { "model": "torches:block/stone_wall_torch", "y": 180 }
+  }
+}

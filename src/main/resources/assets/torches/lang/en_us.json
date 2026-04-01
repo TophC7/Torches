@@ -1,0 +1,7 @@
+{
+  "block.torches.stone_torch": "Stone Torch",
+  "block.torches.stone_wall_torch": "Stone Wall Torch",
+  "item.torches.stone_stick": "Stone Stick",
+  "item.torches.torch_arrow": "Torch Arrow",
+  "entity.torches.torch_arrow": "Torch Arrow"
+}

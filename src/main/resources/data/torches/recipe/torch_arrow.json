@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "minecraft:arrow" },
+    { "item": "minecraft:torch" }
+  ],
+  "result": {
+    "id": "torches:torch_arrow",
+    "count": 1
+  }
+}

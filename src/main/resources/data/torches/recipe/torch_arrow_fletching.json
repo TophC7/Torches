@@ -1,0 +1,9 @@
+{
+  "type": "the_fletching_table:fletching",
+  "first": { "item": "minecraft:arrow" },
+  "second": { "item": "minecraft:torch" },
+  "result": {
+    "id": "torches:torch_arrow",
+    "count": 4
+  }
+}
