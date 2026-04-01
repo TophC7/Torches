@@ -1,0 +1,27 @@
+# Gradle
+.gradle/
+build/
+gradle-app.setting
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+bin/
+dist/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Nix
+.direnv/
+result
+
+# Project specific
+.claude/
