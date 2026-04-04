@@ -10,6 +10,28 @@ group = mod_group_id
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
+// KwahsCore: compiled as part of this mod's source set so its classes
+// are in the same NeoForge module. The jarJar dependency is kept for
+// distribution builds, but dev runs use the source directly.
+// Set kwahscore_path in gradle.properties to the KwahsCore project root.
+sourceSets.main.java.srcDir "${kwahscore_path}/src/main/java"
+
+repositories {
+    mavenLocal()
+    maven {
+        url = 'https://api.modrinth.com/maven'
+        content { includeGroup 'maven.modrinth' }
+    }
+}
+
+dependencies {
+    // For distribution: embeds KwahsCore jar inside the mod jar
+    jarJar('xyz.kwahson.core:kwahs_core:0.1.0')
+
+    // Sodium Dynamic Lights: compile-only for optional compat
+    compileOnly('maven.modrinth:sodium-dynamic-lights:neoforge-1.21.1-1.0.9')
+}
+
 neoForge {
     version = project.neo_version
 

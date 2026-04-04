@@ -14,9 +14,16 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.TorchBlock;
 import net.minecraft.world.level.block.WallTorchBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import dev.torches.client.DynamicLightsCompat;
+import dev.torches.client.TorchesConfigScreen;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.fml.loading.FMLEnvironment;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -66,11 +73,26 @@ public class TorchesMod {
                             .updateInterval(20)
                             .build("torch_arrow"));
 
-    public TorchesMod(IEventBus modEventBus) {
+    public TorchesMod(IEventBus modEventBus, ModContainer container) {
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
         ENTITY_TYPES.register(modEventBus);
         modEventBus.addListener(this::addCreativeTabItems);
+
+        container.registerConfig(ModConfig.Type.COMMON, TorchesConfig.SPEC);
+
+        if (FMLEnvironment.dist.isClient()) {
+            container.registerExtensionPoint(
+                IConfigScreenFactory.class,
+                (mc, parent) -> TorchesConfigScreen.create(parent));
+            modEventBus.addListener(TorchesMod::onClientSetup);
+        }
+    }
+
+    private static void onClientSetup(FMLClientSetupEvent event) {
+        if (ModList.get().isLoaded(DynamicLightsCompat.MOD_ID)) {
+            DynamicLightsCompat.register();
+        }
     }
 
     private void addCreativeTabItems(BuildCreativeModeTabContentsEvent event) {

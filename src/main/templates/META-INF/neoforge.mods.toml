@@ -31,3 +31,9 @@ and works just like a regular torch. Torch arrows place a torch wherever they la
     type = "optional"
     ordering = "NONE"
     side = "BOTH"
+
+[[dependencies.${mod_id}]]
+    modId = "sodiumdynamiclights"
+    type = "optional"
+    ordering = "NONE"
+    side = "CLIENT"

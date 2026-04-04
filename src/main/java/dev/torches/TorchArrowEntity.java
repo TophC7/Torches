@@ -26,14 +26,12 @@ public class TorchArrowEntity extends AbstractArrow {
         super(TorchesMod.TORCH_ARROW_ENTITY.get(), shooter, level, pickupStack, weapon);
     }
 
-    // brief fire on hit
-    // 1 second = 1 fire damage tick
     private static final int FIRE_SECONDS = 1;
 
     @Override
     protected void onHitEntity(EntityHitResult result) {
         super.onHitEntity(result);
-        if (!level().isClientSide()) {
+        if (!level().isClientSide() && xyz.kwahson.core.config.SafeConfig.getBool(TorchesConfig.ENABLE_FIRE_DAMAGE_TICK, true)) {
             result.getEntity().igniteForSeconds(FIRE_SECONDS);
         }
     }

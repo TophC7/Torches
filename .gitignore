@@ -2,6 +2,8 @@
 .gradle/
 build/
 gradle-app.setting
+gradlew
+gradlew.bat
 
 # Java
 *.class
@@ -13,7 +15,6 @@ dist/
 
 # IDEs
 .idea/
-.vscode/
 *.swp
 *.swo
 *~
@@ -21,7 +22,7 @@ dist/
 
 # Nix
 .direnv/
-result
 
 # Project specific
+run/
 .claude/

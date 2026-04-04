@@ -18,10 +18,20 @@ An arrow tipped with a lit torch. On impact it places a torch on the surface it 
 
 Works with bows and crossbows.
 
+## Configuration
+
+Settings are in `torches-common.toml` or accessible via the in-game config screen.
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Fire on Hit | `true` | Torch arrows briefly ignite entities on impact |
+| Dynamic Lights | `true` | Torch arrows emit dynamic light in flight (requires a dynamic lights mod) |
+
 ## Compatibility
 
 - Requires NeoForge 1.21.1 (21.1.219+)
-- [The Fletching Table](https://modrinth.com/mod/thefletchingtable) is optional, adds a higher-yield recipe
+- [The Fletching Table](https://modrinth.com/mod/thefletchingtable) (optional) -- higher-yield fletching table recipe
+- [Sodium Dynamic Lights](https://modrinth.com/mod/sodium-dynamic-lights) (optional) -- torch arrows glow in flight, stone torches glow when held
 
 ## License
 
