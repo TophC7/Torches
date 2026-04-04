@@ -2,6 +2,8 @@
 
 Stone torches and torch arrows for cave adventures
 
+![mod preview](public/preview.webp)
+
 ## Stone Torch
 
 A torch made with stone sticks instead of wooden ones. Functionally identical to a vanilla torch just made from stone.
