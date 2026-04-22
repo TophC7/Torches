@@ -6,7 +6,7 @@
   ],
   "key": {
     "C": {
-      "tag": "c:coals"
+      "tag": "minecraft:coals"
     },
     "S": {
       "item": "torches:stone_stick"
