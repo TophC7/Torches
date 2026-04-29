@@ -1,7 +1,10 @@
 {
+  "neoforge:conditions": [
+    { "type": "neoforge:mod_loaded", "modid": "the_fletching_table" }
+  ],
   "type": "the_fletching_table:fletching",
-  "first": { "item": "minecraft:arrow" },
-  "second": { "item": "minecraft:torch" },
+  "second": { "item": "minecraft:arrow" },
+  "third": { "item": "minecraft:torch" },
   "result": {
     "id": "torches:torch_arrow",
     "count": 4
